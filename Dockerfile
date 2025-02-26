@@ -1,4 +1,4 @@
-FROM artifactory.cloud.statcan.ca/docker/argoproj/argocd:v2.4.12
+FROM docker.io/argoproj/argocd:v2.4.12
 
 # Switch to root for the ability to perform install
 USER root
