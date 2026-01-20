@@ -1,4 +1,4 @@
-FROM docker.io/argoproj/argocd:v2.4.12
+FROM docker.io/argoproj/argocd:v3.1.9
 
 # Switch to root for the ability to perform install
 USER root
@@ -12,7 +12,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the AVP plugin (as root so we can copy to /usr/local/bin)
-ENV AVP_VERSION=1.13.0
+ENV AVP_VERSION=1.18.1
 ENV BIN=argocd-vault-plugin
 RUN curl -L -o ${BIN} https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v${AVP_VERSION}/argocd-vault-plugin_${AVP_VERSION}_linux_amd64
 RUN chmod +x ${BIN}
